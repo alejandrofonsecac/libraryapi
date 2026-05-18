@@ -1,3 +1,9 @@
 spring:
-  application:
-    name: libraryapi
+  datasource:
+    url: jdbc:mysql://localhost:3310/libraryapi?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      dll-auto:update
+    show-sql: true
