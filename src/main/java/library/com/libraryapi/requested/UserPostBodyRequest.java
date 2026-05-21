@@ -1,0 +1,16 @@
+package library.com.libraryapi.requested;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Data
+public class UserPostBodyRequest {
+    @NotBlank
+    private String name;
+    private int age;
+    private LocalDateTime loanDate;
+    private LocalDateTime ReturnDate;
+    private Long idBook;
+}

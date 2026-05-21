@@ -1,9 +1,20 @@
 package library.com.libraryapi.domain;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
+@Entity
 @Data
 public class User {
-    String name;
-    int age;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long id;
+    private String name;
+    private int age;
+    private LocalDateTime loanDate;
+    private LocalDateTime ReturnDate;
+    @ManyToOne
+    private Book userBook;
 }
