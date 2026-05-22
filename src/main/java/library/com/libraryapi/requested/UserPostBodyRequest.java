@@ -10,7 +10,7 @@ public class UserPostBodyRequest {
     @NotBlank
     private String name;
     private int age;
-    private LocalDateTime loanDate;
-    private LocalDateTime ReturnDate;
+    private LocalDateTime loanDate =  LocalDateTime.now();
+    private LocalDateTime ReturnDate = null;
     private Long idBook;
 }

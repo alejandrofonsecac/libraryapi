@@ -7,6 +7,5 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface LibraryMapper {
-   @Mapping(target = "releaseDate", ignore = true)
    Book toBook(BookPostBodyRequest request);
 }

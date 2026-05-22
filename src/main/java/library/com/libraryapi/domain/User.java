@@ -13,8 +13,8 @@ public class User {
     private Long id;
     private String name;
     private int age;
-    private LocalDateTime loanDate;
-    private LocalDateTime ReturnDate;
+    private LocalDateTime localDateTime = LocalDateTime.now();
+    private LocalDateTime ReturnDate = null;
     @ManyToOne
     private Book userBook;
 }
