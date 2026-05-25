@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 @Log4j2
@@ -20,5 +22,9 @@ public class BookService {
     public Book registerBook(BookPostBodyRequest request){
         Book book = libraryMapper.toBook(request);
         return bookRepository.save(book);
+    }
+
+    public List<Book> getAllBooks(){
+        return bookRepository.findAll();
     }
 }
