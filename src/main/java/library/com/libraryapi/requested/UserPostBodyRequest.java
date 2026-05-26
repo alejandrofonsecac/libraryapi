@@ -12,5 +12,5 @@ public class UserPostBodyRequest {
     private int age;
     private LocalDateTime loanDate =  LocalDateTime.now();
     private LocalDateTime ReturnDate = null;
-    private Long idBook;
+    private String bookName = null;
 }

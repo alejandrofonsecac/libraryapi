@@ -1,26 +1,61 @@
 package library.com.libraryapi.service;
 
 import jakarta.transaction.Transactional;
+import library.com.libraryapi.domain.Book;
+import library.com.libraryapi.domain.Borrow;
 import library.com.libraryapi.domain.User;
 import library.com.libraryapi.mapper.UserMapper;
+import library.com.libraryapi.repository.BookRepository;
+import library.com.libraryapi.repository.BorrowRepository;
 import library.com.libraryapi.repository.UserRepository;
+import library.com.libraryapi.requested.BorrowRequest;
 import library.com.libraryapi.requested.UserPostBodyRequest;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @AllArgsConstructor
-@NoArgsConstructor
 @Log4j2
 @Service
 public class UserService {
-    private UserRepository userRepository;
-    private UserMapper userMapper;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+    private final BookRepository bookRepository;
+    private final BorrowRepository borrowRepository;
 
     @Transactional(rollbackOn = Exception.class)
     public User registerUser(UserPostBodyRequest request){
         User user = userMapper.registerUser(request);
         return userRepository.save(user);
+    }
+
+    @Transactional(rollbackOn = Exception.class)
+    public void UserIdBorrowBook(BorrowRequest request){
+        User user = userRepository.findById(request.getUser())
+                .orElseThrow(() -> new RuntimeException("User não encontrado"));
+
+        Book book = bookRepository.findById(request.getBook())
+                .orElseThrow(() -> new RuntimeException("Book não encontrado"));
+
+        if (!book.isAvaliable()){
+            throw new RuntimeException("Book não esta disponivel");
+        }
+
+        book.setAvailable(false);
+        Borrow borrow = new Borrow();
+        borrow.setUser(user);
+        borrow.setBook(book);
+        borrowRepository.save(borrow);
+    }
+
+    public List<User> getAllUser(){
+        return userRepository.findAll();
+    }
+
+    public User getUserById(Long id){
+        return userRepository.getReferenceById(id);
     }
 }

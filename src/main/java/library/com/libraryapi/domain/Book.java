@@ -18,4 +18,8 @@ public class Book {
     private  String description;
     private  String releaseDate;
     private  Boolean available;
+
+    public boolean isAvaliable(){
+        return available;
+    }
 }
