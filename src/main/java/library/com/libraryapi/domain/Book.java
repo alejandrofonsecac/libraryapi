@@ -19,7 +19,7 @@ public class Book {
     private  String releaseDate;
     private  Boolean available;
 
-    public boolean isAvaliable(){
+    public boolean isAvailable(){
         return available;
     }
 }

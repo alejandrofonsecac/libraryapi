@@ -14,7 +14,6 @@ public class User {
     private String name;
     private int age;
     private LocalDateTime localDateTime = LocalDateTime.now();
-    private LocalDateTime ReturnDate = null;
     @ManyToOne
     private Book userBook;
 }

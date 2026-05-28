@@ -32,25 +32,6 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    @Transactional(rollbackOn = Exception.class)
-    public void UserIdBorrowBook(BorrowRequest request){
-        User user = userRepository.findById(request.getUser())
-                .orElseThrow(() -> new RuntimeException("User não encontrado"));
-
-        Book book = bookRepository.findById(request.getBook())
-                .orElseThrow(() -> new RuntimeException("Book não encontrado"));
-
-        if (!book.isAvaliable()){
-            throw new RuntimeException("Book não esta disponivel");
-        }
-
-        book.setAvailable(false);
-        Borrow borrow = new Borrow();
-        borrow.setUser(user);
-        borrow.setBook(book);
-        borrowRepository.save(borrow);
-    }
-
     public List<User> getAllUser(){
         return userRepository.findAll();
     }
