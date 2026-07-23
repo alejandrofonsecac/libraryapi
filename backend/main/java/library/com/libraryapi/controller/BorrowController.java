@@ -1,11 +1,9 @@
 package library.com.libraryapi.controller;
 
 import jakarta.validation.Valid;
-import library.com.libraryapi.domain.Book;
 import library.com.libraryapi.domain.Borrow;
 import library.com.libraryapi.requested.BorrowRequest;
 import library.com.libraryapi.service.BorrowService;
-import library.com.libraryapi.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
