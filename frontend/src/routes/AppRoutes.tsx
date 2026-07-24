@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Home } from "../pages/Home";
-import { Header } from "../shared/Header.tsx";
 
 export default function AppRoutes(){
 
