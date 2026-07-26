@@ -1,9 +1,9 @@
+import { Recommend } from "./components/Recommended";
+
 function App() {
   return (
     <>
-      <h1>
-        Ola
-      </h1>
+      <Recommend/>
     </>
   )
 }
