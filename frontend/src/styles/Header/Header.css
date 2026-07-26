@@ -1,38 +1,125 @@
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 1px solid #e7eaf0;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(220, 226, 239, 0.8);
+  background: rgba(250, 252, 255, 0.82);
+  backdrop-filter: blur(16px);
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    min-height: 76px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.brand { display: inline-flex; align-items: center; gap: .7rem; color: #172033; font-size: 1.2rem; font-weight: 750; letter-spacing: -.035em; text-decoration: none; white-space: nowrap; }
-.brand-icon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 11px; color: #fff; background: linear-gradient(135deg, #3567dc, #2149b7); box-shadow: 0 6px 16px rgba(40, 81, 192, .25); }
-.brand-icon svg { width: 21px; height: 21px; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #26324b;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
 
-.header-actions { display: flex; align-items: center; justify-content: flex-end; gap: .75rem; width: min(100%, 650px); }
-.search-field { display: flex; align-items: center; gap: .6rem; flex: 1; min-width: 180px; height: 43px; padding: 0 .9rem; border: 1px solid #d9deea; border-radius: 10px; color: #697386; background: #f8fafc; transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease; }
-.search-field:focus-within { border-color: #3567dc; background: #fff; box-shadow: 0 0 0 3px rgba(53, 103, 220, .13); }
-.search-field svg { flex: 0 0 auto; width: 22px; height: 22px; }
-.search-field input { width: 100%; min-width: 0; border: 0; outline: 0; color: #263147; font: inherit; font-size: .9rem; background: transparent; }
-.search-field input::placeholder { color: #8a94a6; }
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-icon {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #5364d1, #3a4bb2);
+  box-shadow: 0 8px 18px rgba(58, 75, 178, 0.27);
+}
+
+.brand-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  width: min(100%, 650px);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 180px;
+  height: 44px;
+  padding: 0 0.95rem;
+  border: 1px solid #dce3f0;
+  border-radius: 12px;
+  color: #718099;
+  background: rgba(255, 255, 255, 0.86);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.search-field:focus-within {
+  border-color: #7887df;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(91, 107, 234, 0.13);
+}
+
+.search-field svg {
+  flex: 0 0 auto;
+  width: 21px;
+  height: 21px;
+}
+
+.search-field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #2d3b55;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+.search-field input::placeholder {
+  color: #9aa5b5;
+}
 
 @media (max-width: 640px) {
-    .header-content { gap: .85rem; min-height: 68px; padding: 0 1rem; }
-    .brand { font-size: 0; }
-    .brand-icon { width: 35px; height: 35px; }
-    .header-actions { gap: .45rem; }
-    .search-field { min-width: 0; }
+  .header-content {
+    gap: 0.8rem;
+    min-height: 68px;
+    padding: 0 1rem;
+  }
+  .brand {
+    font-size: 0;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .header-actions {
+    gap: 0.45rem;
+  }
+  .search-field {
+    min-width: 0;
+  }
 }
