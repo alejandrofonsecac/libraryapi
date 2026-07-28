@@ -1,7 +1,7 @@
 services:
   db:
     image: mysql:8
-    container_name: libraryapi
+    container_name: library-system-
     ports:
       - "3310:3306"
     environment:

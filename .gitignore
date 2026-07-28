@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+backend/src/main/resources/application.yaml
+backend/src/main/resources/application.yml
+
+
 ### STS ###
 .apt_generated
 .classpath
