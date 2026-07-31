@@ -1,9 +1,8 @@
 import api from "../api/axios";
+import type { Book } from "../models/Book";
 
-const getBooks = () => {
-    return api.get("/books")
-}
-
-export default{
-    getBooks
+export const bookService = {
+    getBooks: () => {
+        return api.get<Book[]>("/books");
+    }
 }
