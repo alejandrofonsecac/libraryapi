@@ -5,3 +5,5 @@ export type CategoryType =
     | "ROMANCE"
     | "HISTORY"
     | "BUSINESS";
+
+export type CategoryFilterValue = CategoryType | "ALL";

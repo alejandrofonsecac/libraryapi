@@ -1,7 +1,6 @@
 import { IoLibrary } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import "../styles/Header/Header.css";
-import { CategoryFilter } from "../components/CategoryFilter";
 
 export const Header = () => {
     return (
@@ -17,7 +16,6 @@ export const Header = () => {
                         <CiSearch aria-hidden="true" />
                         <input id="book-search" type="search" placeholder="Buscar livros, autores..." aria-label="Buscar livros ou autores" />
                     </label>
-                    <CategoryFilter />
                 </div>
             </nav>
         </header>
